@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curs2-stats"
+version = "1.0.0"
+description = "Manual implementations of normality, t and non-parametric tests (Teste statistice - Curs 2), verified against scipy.stats."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Gaita Marian Gabriel" }]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+notebook = ["scipy>=1.11", "pandas>=2.0", "matplotlib>=3.7", "jupyter"]
+dev = ["scipy>=1.11", "pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--doctest-modules src"
